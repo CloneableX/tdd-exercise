@@ -13,9 +13,11 @@ import static org.junit.Assert.assertThat;
  * @description
  */
 public class ArgsTest {
-    @Test
+    //@Test
     public void should_get_arg_value_if_give_arg_name_when_set_args_schema_and_command() {
-        Args args = new Args("l:bool;p:int;d:string", "-l -p 8080 -d /usr/logs");
+        Schema schema = new Schema("l:bool;p:int;d:string");
+
+        Args args = new Args(schema, "-l -p 8080 -d /usr/logs");
         assertThat(args.getValue("l"), is(Boolean.TRUE));
     }
 }
