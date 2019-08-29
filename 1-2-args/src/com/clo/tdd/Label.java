@@ -8,6 +8,12 @@ package com.clo.tdd;
  * @description
  */
 public class Label {
+    public final String name;
+    public final String type;
+
     public Label(String schemaStr) {
+        String[] schemaStrs = schemaStr.split(":");
+        name = schemaStrs[0];
+        type = schemaStrs[1];
     }
 }

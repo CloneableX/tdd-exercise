@@ -31,4 +31,9 @@ public class SchemaTest {
     public void should_get_schema_map_when_give_schema_str() {
         assertThat(schema.labels.size(), is(3));
     }
+
+    @Test
+    public void should_get_type_when_give_label() {
+        assertThat(schema.getType("l"), is("bool"));
+    }
 }
