@@ -19,4 +19,30 @@ public class LabelTest {
         assertThat(label.name, is("l"));
         assertThat(label.type, is("bool"));
     }
+
+    @Test
+    public void should_get_boolean_value_when_give_bool_type_and_value() {
+        checkValueParseResult("l:bool", "true", Boolean.TRUE);
+    }
+
+    @Test
+    public void should_get_int_value_when_give_int_type_and_value() {
+        checkValueParseResult("p:int", "8080", 8080);
+    }
+
+
+    @Test
+    public void should_get_string_value_when_give_string_type_and_value() {
+        checkValueParseResult("s:string", "/usr/logs", "/usr/logs");
+    }
+
+    @Test
+    public void should_get_default_value_when_give_type_and_null_value() {
+        checkValueParseResult("l:bool", null, Boolean.FALSE);
+    }
+
+    private void checkValueParseResult(String schemaStr, String value, Object expected) {
+        Label label = new Label(schemaStr);
+        assertThat(label.parseValue(value), is(expected));
+    }
 }

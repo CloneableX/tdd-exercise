@@ -21,7 +21,7 @@ public class Schema {
         return labels.size();
     }
 
-    public String getType(String labelName) {
-        return labels.stream().filter(label -> label.name.equals(labelName)).findFirst().get().type;
+    public Label queryLabel(String labelName) {
+        return labels.stream().filter(label -> label.name.equals(labelName)).findFirst().get();
     }
 }

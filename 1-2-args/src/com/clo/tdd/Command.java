@@ -11,16 +11,16 @@ import java.util.Map;
  * @description
  */
 public class Command {
-    public Map<String, Object> commandMap;
+    private Map<String, Object> commandMap;
 
     public Command(String command, Schema schema) {
-        String[] commands = command.split(" ");
         this.commandMap = new HashMap<>();
+        String[] commands = command.split(" ");
         for (int i = 0; i < commands.length; i++) {
             if (isLabel(commands[i])) {
                 String labelName = commands[i].substring(1);
                 String value = commands[i + 1];
-                commandMap.put(labelName, parseValue(schema.getType(labelName), isLabel(value) ? null : value));
+                commandMap.put(labelName, schema.queryLabel(labelName).parseValue(isLabel(value) ? null : value));
             }
         }
     }
@@ -33,13 +33,7 @@ public class Command {
         return commandMap.size();
     }
 
-    public Object parseValue(String type, String value) {
-        switch (type) {
-            case "bool":
-                return new Boolean(value);
-            case "int":
-                return Integer.parseInt(value);
-        }
-        return value;
+    public Object queryValue(String labelName) {
+        return commandMap.get(labelName);
     }
 }

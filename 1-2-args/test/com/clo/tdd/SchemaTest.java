@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -34,6 +35,14 @@ public class SchemaTest {
 
     @Test
     public void should_get_type_when_give_label() {
-        assertThat(schema.getType("l"), is("bool"));
+        assertThat(schema.queryLabel("l").type, is("bool"));
+    }
+
+    @Test
+    public void should_get_label_when_give_label_name() {
+        Label label = schema.queryLabel("l");
+        assertNotNull(label);
+        assertThat(label.name, is("l"));
+        assertThat(label.type, is("bool"));
     }
 }

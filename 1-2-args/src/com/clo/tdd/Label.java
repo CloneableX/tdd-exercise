@@ -16,4 +16,14 @@ public class Label {
         name = schemaStrs[0];
         type = schemaStrs[1];
     }
+
+    public Object parseValue(String value) {
+        switch (type) {
+            case "bool":
+                return Boolean.valueOf(value);
+            case "int":
+                return Integer.parseInt(value);
+        }
+        return value;
+    }
 }
