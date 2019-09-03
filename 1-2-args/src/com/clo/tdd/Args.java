@@ -8,11 +8,15 @@ package com.clo.tdd;
  * @description
  */
 public class Args {
-    public Args(Schema schema, Command command) {
+    private final Schema schema;
+    private final Command command;
 
+    public Args(Schema schema, Command command) {
+        this.schema = schema;
+        this.command = command;
     }
 
     public Object getValue(String label) {
-        return null;
+        return command.queryValue(label);
     }
 }
