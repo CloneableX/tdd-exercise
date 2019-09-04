@@ -8,6 +8,6 @@ package com.clo.tdd;
  * @description
  */
 public class Args {
-    public Args(Schema schema) {
+    public Args(Schema schema, Command command) {
     }
 }

@@ -13,7 +13,7 @@ public class ArgsTest {
     @Test
     public void should_get_value_when_give_schema_command_flag() {
         Schema schema = new Schema("l:bool;p:int");
-        new Command("-l -p 8080 -d /usr/logs");
-        Args args = new Args(schema);
+        Command command = new Command("-l -p 8080 -d /usr/logs");
+        Args args = new Args(schema, command);
     }
 }
