@@ -8,7 +8,11 @@ package com.clo.tdd;
  * @description
  */
 public class ArgDef {
-    public ArgDef(String argDef) {
+    public final String flag;
+    private String[] argDefs;
 
+    public ArgDef(String argDef) {
+        this.argDefs = argDef.split(":");
+        flag = argDefs[0];
     }
 }
