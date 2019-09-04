@@ -15,5 +15,6 @@ public class ArgsTest {
         Schema schema = new Schema("l:bool;p:int");
         Command command = new Command("-l -p 8080 -d /usr/logs");
         Args args = new Args(schema, command);
+        args.queryValue("l");
     }
 }

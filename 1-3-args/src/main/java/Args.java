@@ -10,4 +10,8 @@ package com.clo.tdd;
 public class Args {
     public Args(Schema schema, Command command) {
     }
+
+    public Object queryValue(String flag) {
+        return null;
+    }
 }
