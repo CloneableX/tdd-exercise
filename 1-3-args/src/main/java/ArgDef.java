@@ -5,7 +5,7 @@ package com.clo.tdd;
  *
  * @author Cloneable
  * @date 2019/9/4 23:06:04
- * @description
+ * @description the definition of argument
  */
 public class ArgDef {
     public final String flag;
