@@ -27,6 +27,6 @@ public class SchemaTest {
         Schema schema = new Schema("l:bool");
         //ArgDef argDef = new ArgDef("l:bool");
         //assertTrue(argDef instanceof ArgDef);
-        assertTrue(schema.schemas instanceof List);
+        assertTrue(schema.schemas.get(0) instanceof ArgDef);
     }
 }
