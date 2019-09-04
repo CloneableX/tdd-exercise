@@ -9,10 +9,11 @@ package com.clo.tdd;
  */
 public class ArgDef {
     public final String flag;
-    private String[] argDefs;
+    public final String type;
 
     public ArgDef(String argDef) {
-        this.argDefs = argDef.split(":");
+        String[] argDefs = argDef.split(":");
         flag = argDefs[0];
+        type = argDefs[1];
     }
 }

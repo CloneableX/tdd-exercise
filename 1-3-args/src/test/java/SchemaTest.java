@@ -28,5 +28,6 @@ public class SchemaTest {
         ArgDef argDef = schema.schemas.get(0);
         assertTrue(argDef instanceof ArgDef);
         assertThat(argDef.flag, is("l"));
+        assertThat(argDef.type, is("bool"));
     }
 }
