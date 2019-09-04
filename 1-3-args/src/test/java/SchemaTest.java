@@ -18,4 +18,9 @@ public class SchemaTest {
         Schema schema = new Schema("l:bool;p:int;d:string");
         assertThat(schema.size(), is(3));
     }
+
+    @Test
+    public void should_get_flag_and_type_when_give_args_definition_string() {
+        Schema schema = new Schema("l:bool");
+    }
 }
