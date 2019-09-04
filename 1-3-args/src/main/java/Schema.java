@@ -5,16 +5,16 @@ package com.clo.tdd;
  *
  * @author Cloneable
  * @date 2019/9/4 22:37:04
- * @description schema desc argument definition
+ * @description schemas desc argument definition
  */
 public class Schema {
-    public final String[] schema;
+    public final String[] schemas;
 
-    public Schema(String schema) {
-        this.schema = schema.split(";");
+    public Schema(String schemas) {
+        this.schemas = schemas.split(";");
     }
 
     public int size() {
-        return schema.length;
+        return schemas.length;
     }
 }
