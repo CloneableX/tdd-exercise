@@ -2,6 +2,8 @@ package com.clo.tdd;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -23,7 +25,8 @@ public class SchemaTest {
     @Test
     public void should_get_flag_and_type_when_give_args_definition_string() {
         Schema schema = new Schema("l:bool");
-        ArgDef argDef = new ArgDef("l:bool");
-        assertTrue(argDef instanceof ArgDef);
+        //ArgDef argDef = new ArgDef("l:bool");
+        //assertTrue(argDef instanceof ArgDef);
+        assertTrue(schema.schemas instanceof List);
     }
 }

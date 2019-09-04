@@ -1,5 +1,8 @@
 package com.clo.tdd;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * com.clo.tdd.Schema
  *
@@ -8,13 +11,13 @@ package com.clo.tdd;
  * @description schemas desc argument definition
  */
 public class Schema {
-    public final String[] schemas;
+    public final List<String> schemas;
 
     public Schema(String schemas) {
-        this.schemas = schemas.split(";");
+        this.schemas = Arrays.asList(schemas.split(";"));
     }
 
     public int size() {
-        return schemas.length;
+        return schemas.size();
     }
 }
