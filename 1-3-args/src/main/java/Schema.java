@@ -8,7 +8,13 @@ package com.clo.tdd;
  * @description schema desc argument definition
  */
 public class Schema {
-    public Schema(String schema) {
+    private String schema;
 
+    public Schema(String schema) {
+        this.schema = schema;
+    }
+
+    public int size() {
+        return schema.split(";").length;
     }
 }
