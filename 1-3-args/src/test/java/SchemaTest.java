@@ -22,5 +22,6 @@ public class SchemaTest {
     @Test
     public void should_get_flag_and_type_when_give_args_definition_string() {
         Schema schema = new Schema("l:bool");
+        ArgDef argDef = new ArgDef("l:bool");
     }
 }
