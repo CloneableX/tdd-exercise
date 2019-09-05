@@ -17,6 +17,10 @@ public class Command {
     }
 
     public int size() {
-        return Arrays.stream(args).filter(arg -> arg.indexOf("-") > -1).toArray().length;
+        return Arrays.stream(args).filter(arg -> isFlag(arg)).toArray().length;
+    }
+
+    private boolean isFlag(String flag) {
+        return flag.indexOf("-") > -1;
     }
 }
