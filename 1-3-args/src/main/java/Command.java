@@ -10,14 +10,13 @@ import java.util.Arrays;
  * @description desc command
  */
 public class Command {
-    private String command;
+    private final String[] args;
 
     public Command(String command) {
-        this.command = command;
+        args = command.split(" ");
     }
 
     public int size() {
-        String[] args = command.split(" ");
         return Arrays.stream(args).filter(arg -> arg.indexOf("-") > -1).toArray().length;
     }
 }
