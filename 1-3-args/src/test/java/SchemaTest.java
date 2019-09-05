@@ -31,4 +31,11 @@ public class SchemaTest {
         assertThat(argDef.type, is("bool"));
         assertThat(argDef.defaultValue, is("false"));
     }
+
+    @Test
+    public void should_get_flag_and_type_and_null_default_when_give_args_definition_string() {
+        Schema schema = new Schema("l:bool");
+        ArgDef argDef = schema.schemas.get(0);
+        assertThat(argDef.flag, is("l"));
+    }
 }
