@@ -24,10 +24,11 @@ public class SchemaTest {
 
     @Test
     public void should_get_flag_and_type_when_give_args_definition_string() {
-        Schema schema = new Schema("l:bool");
+        Schema schema = new Schema("l:bool:false");
         ArgDef argDef = schema.schemas.get(0);
         assertTrue(argDef instanceof ArgDef);
         assertThat(argDef.flag, is("l"));
         assertThat(argDef.type, is("bool"));
+        assertThat(argDef.defaultValue, is("false"));
     }
 }

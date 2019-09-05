@@ -10,10 +10,14 @@ package com.clo.tdd;
 public class ArgDef {
     public final String flag;
     public final String type;
+    public String defaultValue;
 
     public ArgDef(String argDef) {
         String[] argDefs = argDef.split(":");
         flag = argDefs[0];
         type = argDefs[1];
+        if (argDefs.length > 2) {
+            defaultValue = argDefs[2];
+        }
     }
 }
