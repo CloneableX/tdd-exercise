@@ -8,6 +8,13 @@ package com.clo.tdd;
  * @description desc command
  */
 public class Command {
+    private String command;
+
     public Command(String command) {
+        this.command = command;
+    }
+
+    public int size() {
+        return command.split(" ").length / 2;
     }
 }

@@ -2,6 +2,9 @@ package com.clo.tdd;
 
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 /**
  * com.clo.tdd.CommandTest
  *
@@ -12,6 +15,7 @@ import org.junit.Test;
 public class CommandTest {
     @Test
     public void should_get_args_size_when_give_command_string() {
-
+        Command command = new Command("-l true -p 8080");
+        assertThat(command.size(), is(2));
     }
 }
