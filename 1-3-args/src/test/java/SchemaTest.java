@@ -5,8 +5,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * com.clo.tdd.SchemaTest
@@ -37,5 +36,7 @@ public class SchemaTest {
         Schema schema = new Schema("l:bool");
         ArgDef argDef = schema.schemas.get(0);
         assertThat(argDef.flag, is("l"));
+        assertThat(argDef.type, is("bool"));
+        assertNull(argDef.defaultValue);
     }
 }
