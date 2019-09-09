@@ -24,4 +24,10 @@ public class CommandTest {
         Command command = new Command("-l -p 8080");
         assertThat(command.size(), is(2));
     }
+
+    @Test
+    public void should_get_value_when_give_flag() {
+        Command command = new Command("-l true -p 8080");
+        assertThat(command.queryValue("-l"), is("true"));
+    }
 }

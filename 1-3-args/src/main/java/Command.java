@@ -30,4 +30,8 @@ public class Command {
     private boolean isFlag(String flag) {
         return flag.indexOf("-") > -1;
     }
+
+    public String queryValue(String flag) {
+        return (String) argMap.get(flag);
+    }
 }
