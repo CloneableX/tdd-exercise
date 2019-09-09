@@ -11,11 +11,10 @@ import java.util.HashMap;
  * @description desc command
  */
 public class Command {
-    private final String[] args;
     private final HashMap argMap = new HashMap();
 
     public Command(String command) {
-        args = command.split(" ");
+        String[] args = command.split(" ");
         for (int i = 0; i < args.length; i += 2) {
             String value = null;
             if (isFlag(args[i])) {
