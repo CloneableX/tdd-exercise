@@ -27,7 +27,7 @@ public class Command {
     }
 
     public int size() {
-        return Arrays.stream(args).filter(arg -> isFlag(arg)).toArray().length;
+        return argMap.size();
     }
 
     private boolean isFlag(String flag) {
