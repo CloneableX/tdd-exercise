@@ -1,6 +1,7 @@
 package com.clo.tdd;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * com.clo.tdd.Command
@@ -11,9 +12,18 @@ import java.util.Arrays;
  */
 public class Command {
     private final String[] args;
+    private final HashMap argMap = new HashMap();
 
     public Command(String command) {
         args = command.split(" ");
+        for (int i = 0; i < args.length; i += 2) {
+            String value = null;
+            if (isFlag(args[i])) {
+                value = args[i+1];
+            }
+
+            argMap.put(args[i],value);
+        }
     }
 
     public int size() {
