@@ -16,8 +16,8 @@ public class Command {
     public Command(String command) {
         String[] args = command.split(" ");
         for (int i = 0; i < args.length; i++) {
-            if (isFlag(args[i])) {
-                String flag = args[i];
+            String flag = args[i];
+            if (isFlag(flag)) {
                 argMap.put(flag.substring(1), args[i + 1]);
             }
 
