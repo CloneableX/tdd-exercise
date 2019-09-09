@@ -15,17 +15,11 @@ public class Command {
 
     public Command(String command) {
         String[] args = command.split(" ");
-        for (int i = 0; i < args.length; ) {
-            String value = null;
-            int step = 1;
-
+        for (int i = 0; i < args.length; i++) {
             if (isFlag(args[i])) {
-                value = args[i+1];
-                step = 2;
+                argMap.put(args[i], args[i + 1]);
             }
 
-            argMap.put(args[i],value);
-            i += step;
         }
     }
 
