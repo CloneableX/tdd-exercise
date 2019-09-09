@@ -11,7 +11,7 @@ import java.util.HashMap;
  * @description desc command
  */
 public class Command {
-    private final HashMap argMap = new HashMap();
+    private final HashMap<String, String> argMap = new HashMap();
 
     public Command(String command) {
         String[] args = command.split(" ");
@@ -32,6 +32,6 @@ public class Command {
     }
 
     public String queryValue(String flag) {
-        return (String) argMap.get(flag);
+        return argMap.get(flag);
     }
 }
