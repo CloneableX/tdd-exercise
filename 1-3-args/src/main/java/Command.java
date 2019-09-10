@@ -11,9 +11,10 @@ import java.util.HashMap;
  * @description desc command
  */
 public class Command {
-    private final HashMap<String, String> argMap = new HashMap();
+    private final HashMap<String, String> argMap;
 
     public Command(String command) {
+        argMap = new HashMap<>();
         String[] args = command.split(" ");
         for (int i = 0; i < args.length; i++) {
             String flag = args[i];
