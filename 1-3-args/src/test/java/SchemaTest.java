@@ -2,8 +2,6 @@ package com.clo.tdd;
 
 import org.junit.Test;
 
-import java.util.List;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -25,7 +23,7 @@ public class SchemaTest {
     public void should_get_flag_and_type_when_give_args_definition_string() {
         Schema schema = new Schema("l:bool:false");
         ArgDef argDef = schema.schemas.get(0);
-        assertTrue(argDef instanceof ArgDef);
+        assertNotNull(argDef);
         assertThat(argDef.flag, is("l"));
         assertThat(argDef.type, is("bool"));
         assertThat(argDef.defaultValue, is("false"));
