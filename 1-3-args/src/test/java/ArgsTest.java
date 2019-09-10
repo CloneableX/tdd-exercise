@@ -1,5 +1,6 @@
 package com.clo.tdd;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -11,6 +12,7 @@ import org.junit.Test;
  */
 public class ArgsTest {
     @Test
+    @Ignore
     public void should_get_value_when_give_schema_command_flag() {
         Schema schema = new Schema("l:bool;p:int");
         Command command = new Command("-l -p 8080 -d /usr/logs");
