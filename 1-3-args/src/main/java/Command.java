@@ -1,6 +1,5 @@
 package com.clo.tdd;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -25,7 +24,7 @@ public class Command {
         }
     }
 
-    public int size() {
+    int size() {
         return argMap.size();
     }
 
@@ -33,7 +32,7 @@ public class Command {
         return flag.contains("-");
     }
 
-    public String queryValue(String flag) {
+    String queryValue(String flag) {
         return argMap.get(flag);
     }
 }
