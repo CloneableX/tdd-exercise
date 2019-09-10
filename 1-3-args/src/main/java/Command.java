@@ -30,7 +30,7 @@ public class Command {
     }
 
     private boolean isFlag(String flag) {
-        return flag.indexOf("-") > -1;
+        return flag.contains("-");
     }
 
     public String queryValue(String flag) {
