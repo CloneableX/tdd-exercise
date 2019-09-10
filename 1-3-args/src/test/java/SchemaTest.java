@@ -43,5 +43,6 @@ public class SchemaTest {
         Schema schema = new Schema("l:bool;p:int");
         ArgDef argDef = schema.queryArgDef("l");
         assertNotNull(argDef);
+        assertThat(argDef.type, is("bool"));
     }
 }
