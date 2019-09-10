@@ -37,4 +37,11 @@ public class SchemaTest {
         assertThat(argDef.type, is("bool"));
         assertNull(argDef.defaultValue);
     }
+
+    @Test
+    public void should_get_arg_def_when_give_flag() {
+        Schema schema = new Schema("l:bool;p:int");
+        ArgDef argDef = schema.queryArgDef("l");
+        assertNotNull(argDef);
+    }
 }

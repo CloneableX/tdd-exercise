@@ -21,4 +21,8 @@ public class Schema {
     public int size() {
         return schemas.size();
     }
+
+    public ArgDef queryArgDef(String flag) {
+        return schemas.stream().filter(argDef -> argDef.flag.equals(flag)).findFirst().get();
+    }
 }
