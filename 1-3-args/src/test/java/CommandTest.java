@@ -3,6 +3,7 @@ package com.clo.tdd;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -29,5 +30,11 @@ public class CommandTest {
     public void should_get_value_when_give_flag() {
         Command command = new Command("-l true -p 8080");
         assertThat(command.queryValue("l"), is("true"));
+    }
+
+    @Test
+    public void should_get_null_when_give_flag_without_value() {
+        Command command = new Command("-l -p 8080");
+        assertNull(command.queryValue("l"));
     }
 }

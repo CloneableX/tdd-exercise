@@ -18,7 +18,7 @@ public class Command {
         for (int i = 0; i < args.length; i++) {
             String flag = args[i];
             if (isFlag(flag)) {
-                argMap.put(flag.substring(1), args[i + 1]);
+                argMap.put(flag.substring(1), isFlag(args[i + 1]) ? null : args[i + 1]);
             }
 
         }
