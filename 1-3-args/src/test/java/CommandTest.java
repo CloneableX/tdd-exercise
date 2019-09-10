@@ -34,7 +34,7 @@ public class CommandTest {
 
     @Test
     public void should_get_null_when_give_flag_without_value() {
-        Command command = new Command("-l -p 8080");
+        Command command = new Command("-l");
         assertNull(command.queryValue("l"));
     }
 }
