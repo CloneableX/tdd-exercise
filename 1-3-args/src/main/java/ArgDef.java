@@ -27,6 +27,6 @@ public class ArgDef {
         } else if ("int".equals(type)) {
             return new Integer(value);
         }
-        return null;
+        return value;
     }
 }

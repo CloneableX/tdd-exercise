@@ -39,4 +39,10 @@ public class ArgDefTest {
         ArgDef argDef = new ArgDef("l:int");
         assertThat(argDef.parseValue("8080"), is(8080));
     }
+
+    @Test
+    public void should_get_string_value_when_give_string_type_arg_def() {
+        ArgDef argDef = new ArgDef("l:string");
+        assertThat(argDef.parseValue("/usr/logs"), is("/usr/logs"));
+    }
 }
