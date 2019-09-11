@@ -19,8 +19,8 @@ public class ArgsTest {
 
     @Before
     public void setUp() {
-        Schema schema = new Schema("l:bool;p:int;d:string");
-        Command command = new Command("-l -p 8080 -d /usr/logs");
+        Schema schema = new Schema("l:bool;p:int;d:string;u:string:cloneable");
+        Command command = new Command("-l -p 8080 -d /usr/logs -u");
         args = new Args(schema, command);
     }
 
@@ -29,11 +29,12 @@ public class ArgsTest {
         assertThat(args.queryValue("l"), is(Boolean.FALSE));
         assertThat(args.queryValue("p"), is(8080));
         assertThat(args.queryValue("d"), is("/usr/logs"));
+        assertThat(args.queryValue("u"), is("cloneable"));
     }
 
 
     @Test
     public void should_get_arg_size_when_give_schema_and_command() {
-        assertThat(args.size(), is(3));
+        assertThat(args.size(), is(4));
     }
 }
