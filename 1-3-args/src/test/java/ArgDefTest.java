@@ -18,6 +18,7 @@ public class ArgDefTest {
     public void should_get_arg_def_when_give_schema_def_string() {
         ArgDef argDef = new ArgDef("l:bool");
         assertNotNull(argDef);
+        assertThat(argDef.flag, is("l"));
         assertThat(argDef.type, is("bool"));
     }
 }
