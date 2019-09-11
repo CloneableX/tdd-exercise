@@ -4,6 +4,9 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 /**
  * com.clo.tdd.ArgsTest
  *
@@ -30,6 +33,6 @@ public class ArgsTest {
 
     @Test
     public void should_get_arg_size_when_give_schema_and_command() {
-
+        assertThat(args.size(), is(3));
     }
 }
