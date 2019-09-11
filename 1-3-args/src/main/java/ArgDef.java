@@ -22,6 +22,9 @@ public class ArgDef {
     }
 
     public Object parseValue(String value) {
+        if (value == null || "".equals(value)) {
+            return defaultValue;
+        }
         if ("bool".equals(type)) {
             return new Boolean(value);
         } else if ("int".equals(type)) {

@@ -45,4 +45,10 @@ public class ArgDefTest {
         ArgDef argDef = new ArgDef("l:string");
         assertThat(argDef.parseValue("/usr/logs"), is("/usr/logs"));
     }
+
+    @Test
+    public void should_get_default_value_when_give_null_value() {
+        ArgDef argDef = new ArgDef("l:bool:true");
+        assertThat(argDef.parseValue(null), is(Boolean.TRUE));
+    }
 }
