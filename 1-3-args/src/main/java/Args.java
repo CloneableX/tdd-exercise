@@ -1,5 +1,7 @@
 package com.clo.tdd;
 
+import java.util.HashMap;
+
 /**
  * com.clo.tdd.Args
  *
@@ -9,11 +11,13 @@ package com.clo.tdd;
  */
 public class Args {
     private final Schema schema;
+    private final HashMap<String, String> args;
     private Command command;
 
     public Args(Schema schema, Command command) {
         this.schema = schema;
         this.command = command;
+        this.args = command.argMap;
     }
 
     public Object queryValue(String flag) {
@@ -21,6 +25,6 @@ public class Args {
     }
 
     public int size() {
-        return command.size();
+        return args.size();
     }
 }

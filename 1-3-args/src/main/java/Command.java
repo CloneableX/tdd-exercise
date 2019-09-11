@@ -10,7 +10,7 @@ import java.util.HashMap;
  * @description desc command
  */
 public class Command {
-    private final HashMap<String, String> argMap;
+    public final HashMap<String, String> argMap;
 
     public Command(String command) {
         argMap = new HashMap<>();
