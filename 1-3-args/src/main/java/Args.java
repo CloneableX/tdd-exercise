@@ -1,6 +1,7 @@
 package com.clo.tdd;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * com.clo.tdd.Args
@@ -11,13 +12,17 @@ import java.util.HashMap;
  */
 public class Args {
     private final Schema schema;
-    private final HashMap<String, String> args;
+    private final HashMap<String, Object> args;
     private Command command;
 
     public Args(Schema schema, Command command) {
         this.schema = schema;
         this.command = command;
-        this.args = command.argMap;
+        this.args = new HashMap<>();
+
+        for (Map.Entry<String, String> entry : command.argMap.entrySet()) {
+            args.put(entry.getKey(), schema.queryArgDef(entry.getKey()).parseValue(entry.getValue()));
+        }
     }
 
     public Object queryValue(String flag) {
