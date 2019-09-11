@@ -19,7 +19,7 @@ public class ArgsTest {
 
     @Before
     public void setUp() {
-        Schema schema = new Schema("l:bool;p:int");
+        Schema schema = new Schema("l:bool;p:int;d:string");
         Command command = new Command("-l -p 8080 -d /usr/logs");
         args = new Args(schema, command);
     }
