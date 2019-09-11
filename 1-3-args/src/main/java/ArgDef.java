@@ -24,6 +24,8 @@ public class ArgDef {
     public Object parseValue(String value) {
         if ("bool".equals(type)) {
             return new Boolean(value);
+        } else if ("int".equals(type)) {
+            return new Integer(value);
         }
         return null;
     }

@@ -33,4 +33,10 @@ public class ArgDefTest {
         ArgDef argDef = new ArgDef("l:bool");
         assertThat(argDef.parseValue("true"), is(Boolean.TRUE));
     }
+
+    @Test
+    public void should_get_int_value_when_give_int_type_arg_def() {
+        ArgDef argDef = new ArgDef("l:int");
+        assertThat(argDef.parseValue("8080"), is(8080));
+    }
 }
