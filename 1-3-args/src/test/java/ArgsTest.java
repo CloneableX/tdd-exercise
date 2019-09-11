@@ -27,6 +27,8 @@ public class ArgsTest {
     @Test
     public void should_get_value_when_give_schema_command_flag() {
         assertThat(args.queryValue("l"), is(Boolean.FALSE));
+        assertThat(args.queryValue("p"), is(8080));
+        assertThat(args.queryValue("d"), is("/usr/logs"));
     }
 
 
