@@ -20,4 +20,11 @@ public class ArgDef {
             defaultValue = argDefs[2];
         }
     }
+
+    public Object parseValue(String value) {
+        if ("bool".equals(type)) {
+            return new Boolean(value);
+        }
+        return null;
+    }
 }
