@@ -2,6 +2,10 @@ package com.clo.tdd;
 
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+
 /**
  * com.clo.tdd.ArgDefTest
  *
@@ -11,7 +15,9 @@ import org.junit.Test;
  */
 public class ArgDefTest {
     @Test
-    public void should_get_create_arg_def() {
-
+    public void should_get_arg_def_when_give_schema_def_string() {
+        ArgDef argDef = new ArgDef("l:bool");
+        assertNotNull(argDef);
+        assertThat(argDef.type, is("bool"));
     }
 }
