@@ -5,3 +5,4 @@
 |03|Schema 增加缺省值解析以及完成 Command 的参数对解析|31:39.05|
 |04|Command 通过 flag 获取对应 value |24:36.84|
 |05|Command 解析完成，Schema 通过 Flag 查找对应 ArgDef|28:18.59|
+|06|完成 Args 的解析，并且附带 Schema 可传入默认值|52:56.92|
