@@ -25,9 +25,8 @@ public class ArgsTest {
     }
 
     @Test
-    @Ignore
     public void should_get_value_when_give_schema_command_flag() {
-        args.queryValue("l");
+        assertThat(args.queryValue("l"), is(Boolean.FALSE));
     }
 
 

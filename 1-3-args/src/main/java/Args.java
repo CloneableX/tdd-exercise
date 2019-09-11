@@ -21,7 +21,7 @@ public class Args {
     }
 
     public Object queryValue(String flag) {
-        return null;
+        return args.get(flag);
     }
 
     public int size() {
