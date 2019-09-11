@@ -1,5 +1,6 @@
 package com.clo.tdd;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -11,12 +12,24 @@ import org.junit.Test;
  * @description unit test for Args
  */
 public class ArgsTest {
+    private Args args;
+
+    @Before
+    public void setUp() {
+        Schema schema = new Schema("l:bool;p:int");
+        Command command = new Command("-l -p 8080 -d /usr/logs");
+        args = new Args(schema, command);
+    }
+
     @Test
     @Ignore
     public void should_get_value_when_give_schema_command_flag() {
-        Schema schema = new Schema("l:bool;p:int");
-        Command command = new Command("-l -p 8080 -d /usr/logs");
-        Args args = new Args(schema, command);
         args.queryValue("l");
+    }
+
+
+    @Test
+    public void should_get_arg_size_when_give_schema_and_command() {
+
     }
 }
