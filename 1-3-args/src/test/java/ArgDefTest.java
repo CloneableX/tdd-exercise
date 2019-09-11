@@ -31,6 +31,6 @@ public class ArgDefTest {
     @Test
     public void should_arg_def_parse_boolean_value_when_give_boolean_string() {
         ArgDef argDef = new ArgDef("l:bool");
-        argDef.parseValue("true");
+        assertThat(argDef.parseValue("true"), is(Boolean.TRUE));
     }
 }
