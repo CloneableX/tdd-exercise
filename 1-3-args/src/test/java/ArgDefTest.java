@@ -25,7 +25,7 @@ public class ArgDefTest {
     @Test
     public void should_get_arg_default_value_when_give_schema_def_string_with_default() {
         ArgDef argDef = new ArgDef("l:bool:true");
-        assertThat(argDef.defaultValue, is("true"));
+        assertThat(argDef.defaultValue, is(Boolean.TRUE));
     }
 
     @Test
