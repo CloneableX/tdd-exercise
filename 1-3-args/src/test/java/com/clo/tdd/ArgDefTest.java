@@ -16,7 +16,7 @@ import static org.junit.Assert.assertThat;
 public class ArgDefTest {
     @Test
     public void should_get_arg_def_when_give_schema_def_string() {
-        ArgDef argDef = new ArgDef("l:bool");
+        com.clo.tdd.ArgDef argDef = new com.clo.tdd.ArgDef("l:bool");
         assertNotNull(argDef);
         assertThat(argDef.flag, is("l"));
         assertThat(argDef.type, is("bool"));
@@ -24,31 +24,31 @@ public class ArgDefTest {
 
     @Test
     public void should_get_arg_default_value_when_give_schema_def_string_with_default() {
-        ArgDef argDef = new ArgDef("l:bool:true");
+        com.clo.tdd.ArgDef argDef = new com.clo.tdd.ArgDef("l:bool:true");
         assertThat(argDef.defaultValue, is(Boolean.TRUE));
     }
 
     @Test
     public void should_arg_def_parse_boolean_value_when_give_boolean_string() {
-        ArgDef argDef = new ArgDef("l:bool");
+        com.clo.tdd.ArgDef argDef = new com.clo.tdd.ArgDef("l:bool");
         assertThat(argDef.parseValue("true"), is(Boolean.TRUE));
     }
 
     @Test
     public void should_get_int_value_when_give_int_type_arg_def() {
-        ArgDef argDef = new ArgDef("l:int");
+        com.clo.tdd.ArgDef argDef = new com.clo.tdd.ArgDef("l:int");
         assertThat(argDef.parseValue("8080"), is(8080));
     }
 
     @Test
     public void should_get_string_value_when_give_string_type_arg_def() {
-        ArgDef argDef = new ArgDef("l:string");
+        com.clo.tdd.ArgDef argDef = new com.clo.tdd.ArgDef("l:string");
         assertThat(argDef.parseValue("/usr/logs"), is("/usr/logs"));
     }
 
     @Test
     public void should_get_default_value_when_give_null_value() {
-        ArgDef argDef = new ArgDef("l:bool:true");
+        com.clo.tdd.ArgDef argDef = new com.clo.tdd.ArgDef("l:bool:true");
         assertThat(argDef.parseValue(null), is(Boolean.TRUE));
     }
 }

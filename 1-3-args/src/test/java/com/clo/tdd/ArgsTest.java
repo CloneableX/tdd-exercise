@@ -14,13 +14,13 @@ import static org.junit.Assert.assertThat;
  * @description unit test for Args
  */
 public class ArgsTest {
-    private Args args;
+    private com.clo.tdd.Args args;
 
     @Before
     public void setUp() {
         Schema schema = new Schema("l:bool;p:int;d:string;u:string:cloneable");
-        Command command = new Command("-l -p 8080 -d /usr/logs -u");
-        args = new Args(schema, command);
+        com.clo.tdd.Command command = new com.clo.tdd.Command("-l -p 8080 -d /usr/logs -u");
+        args = new com.clo.tdd.Args(schema, command);
     }
 
     @Test

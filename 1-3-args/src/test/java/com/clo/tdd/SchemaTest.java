@@ -22,7 +22,7 @@ public class SchemaTest {
     @Test
     public void should_get_flag_and_type_when_give_args_definition_string() {
         Schema schema = new Schema("l:bool:false");
-        ArgDef argDef = schema.schemas.get(0);
+        com.clo.tdd.ArgDef argDef = schema.schemas.get(0);
         assertNotNull(argDef);
         assertThat(argDef.flag, is("l"));
         assertThat(argDef.type, is("bool"));
@@ -32,7 +32,7 @@ public class SchemaTest {
     @Test
     public void should_get_flag_and_type_and_null_default_when_give_args_definition_string() {
         Schema schema = new Schema("l:bool");
-        ArgDef argDef = schema.schemas.get(0);
+        com.clo.tdd.ArgDef argDef = schema.schemas.get(0);
         assertThat(argDef.flag, is("l"));
         assertThat(argDef.type, is("bool"));
         assertNull(argDef.defaultValue);
@@ -41,7 +41,7 @@ public class SchemaTest {
     @Test
     public void should_get_arg_def_when_give_flag() {
         Schema schema = new Schema("l:bool;p:int");
-        ArgDef argDef = schema.queryArgDef("l");
+        com.clo.tdd.ArgDef argDef = schema.queryArgDef("l");
         assertNotNull(argDef);
         assertThat(argDef.type, is("bool"));
     }

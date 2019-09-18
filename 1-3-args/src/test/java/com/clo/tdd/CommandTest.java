@@ -16,25 +16,25 @@ import static org.junit.Assert.assertThat;
 public class CommandTest {
     @Test
     public void should_get_args_size_when_give_command_string() {
-        Command command = new Command("-l true -p 8080");
+        com.clo.tdd.Command command = new com.clo.tdd.Command("-l true -p 8080");
         assertThat(command.size(), is(2));
     }
 
     @Test
     public void should_get_args_size_when_give_command_string_with_default_value() {
-        Command command = new Command("-l -p 8080");
+        com.clo.tdd.Command command = new com.clo.tdd.Command("-l -p 8080");
         assertThat(command.size(), is(2));
     }
 
     @Test
     public void should_get_value_when_give_flag() {
-        Command command = new Command("-l true -p 8080");
+        com.clo.tdd.Command command = new com.clo.tdd.Command("-l true -p 8080");
         assertThat(command.queryValue("l"), is("true"));
     }
 
     @Test
     public void should_get_null_when_give_flag_without_value() {
-        Command command = new Command("-l");
+        com.clo.tdd.Command command = new com.clo.tdd.Command("-l");
         assertNull(command.queryValue("l"));
     }
 }
