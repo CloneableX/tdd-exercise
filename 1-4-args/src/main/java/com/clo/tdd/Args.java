@@ -8,7 +8,7 @@ package com.clo.tdd;
  * @description
  */
 public class Args {
-    public Args(String schema, String command) {
+    public Args(Schema schema, Command command) {
 
     }
 
