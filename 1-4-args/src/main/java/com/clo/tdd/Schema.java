@@ -8,10 +8,12 @@ package com.clo.tdd;
  * @description
  */
 public class Schema {
+    private final String[] labels;
     private String schema;
 
     public Schema(String schema) {
         this.schema = schema;
+        labels = schema.split(";");
     }
 
     public Label queryArg(String name) {
@@ -19,6 +21,6 @@ public class Schema {
     }
 
     public int size() {
-        return schema.split(";").length;
+        return labels.length;
     }
 }
