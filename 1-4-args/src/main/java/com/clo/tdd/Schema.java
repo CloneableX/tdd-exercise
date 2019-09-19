@@ -9,10 +9,8 @@ package com.clo.tdd;
  */
 public class Schema {
     private final String[] labels;
-    private String schema;
 
     public Schema(String schema) {
-        this.schema = schema;
         labels = schema.split(";");
     }
 
