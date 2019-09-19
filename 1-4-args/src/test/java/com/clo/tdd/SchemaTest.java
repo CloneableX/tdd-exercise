@@ -22,4 +22,10 @@ public class SchemaTest {
         assertThat(label.type, is("bool"));
         assertThat(label.parseValue("true"), is(Boolean.TRUE));
     }
+
+    @Test
+    public void should_get_size_when_give_schema_string() {
+        Schema schema = new Schema("l:bool;p:int;d:string");
+        assertThat(schema.size(), is(3));
+    }
 }
