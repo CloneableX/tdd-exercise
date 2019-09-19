@@ -10,4 +10,8 @@ package com.clo.tdd;
 public class Schema {
     public Schema(String schema) {
     }
+
+    public Object queryArg(String name) {
+        return null;
+    }
 }
