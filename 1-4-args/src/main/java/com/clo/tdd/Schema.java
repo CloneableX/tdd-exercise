@@ -11,7 +11,7 @@ public class Schema {
     public Schema(String schema) {
     }
 
-    public Object queryArg(String name) {
+    public Label queryArg(String name) {
         return null;
     }
 }
