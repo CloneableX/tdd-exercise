@@ -20,7 +20,7 @@ public class Schema {
     }
 
     public Label queryArg(String name) {
-        return null;
+        return labelList.stream().filter(label -> label.name.equals(name)).findFirst().get();
     }
 
     public int size() {

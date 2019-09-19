@@ -8,10 +8,13 @@ package com.clo.tdd;
  * @description
  */
 public class Label {
-    public String type;
+
+    public final String name;
+    public final String type;
 
     public Label(String name, String type) {
-
+        this.name = name;
+        this.type = type;
     }
 
     public Object parseValue(String value) {
