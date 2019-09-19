@@ -1,5 +1,8 @@
 package com.clo.tdd;
 
+import java.util.ArrayList;
+import java.util.concurrent.ArrayBlockingQueue;
+
 /**
  * com.clo.tdd.Schema
  *
@@ -9,9 +12,14 @@ package com.clo.tdd;
  */
 public class Schema {
     private final String[] labels;
+    private final ArrayList<Label> labelList = new ArrayList<>();
 
     public Schema(String schema) {
         labels = schema.split(";");
+        for (int i = 0; i < labels.length; i++) {
+            String[] label = labels[i].split(":");
+            labelList.add(new Label(label[0], label[1]));
+        }
     }
 
     public Label queryArg(String name) {
@@ -19,6 +27,6 @@ public class Schema {
     }
 
     public int size() {
-        return labels.length;
+        return labelList.size();
     }
 }
