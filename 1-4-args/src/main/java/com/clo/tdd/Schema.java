@@ -2,7 +2,6 @@ package com.clo.tdd;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * com.clo.tdd.Schema
