@@ -20,5 +20,6 @@ public class SchemaTest {
         Schema schema = new Schema("l:bool;p:int;d:string");
         Label label = schema.queryArg("l");
         assertThat(label.type, is("bool"));
+        assertThat(label.parseValue("true"), is(Boolean.TRUE));
     }
 }

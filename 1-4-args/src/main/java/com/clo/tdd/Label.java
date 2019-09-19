@@ -9,4 +9,8 @@ package com.clo.tdd;
  */
 public class Label {
     public String type;
+
+    public Object parseValue(String value) {
+        return null;
+    }
 }
