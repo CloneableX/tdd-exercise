@@ -18,6 +18,9 @@ public class Label {
     }
 
     public Object parseValue(String value) {
+        if ("bool".equals(type)){
+            return Boolean.valueOf(value);
+        }
         return Boolean.TRUE;
     }
 }
