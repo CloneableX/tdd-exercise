@@ -21,6 +21,9 @@ public class Label {
         if ("bool".equals(type)){
             return Boolean.valueOf(value);
         }
+        if ("int".equals(type)) {
+            return Integer.parseInt(value);
+        }
         return Boolean.TRUE;
     }
 }

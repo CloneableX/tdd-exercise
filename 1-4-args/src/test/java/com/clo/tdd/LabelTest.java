@@ -20,4 +20,10 @@ public class LabelTest {
         assertThat(label.parseValue("false"), is(Boolean.FALSE));
         assertThat(label.parseValue(null), is(Boolean.FALSE));
     }
+
+    @Test
+    public void should_parse_int_value_when_give_int_label() {
+        Label label = new Label("p", "int");
+        assertThat(label.parseValue("8080"), is(8080));
+    }
 }
