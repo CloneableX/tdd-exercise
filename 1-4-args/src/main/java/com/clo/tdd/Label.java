@@ -24,6 +24,6 @@ public class Label {
         if ("int".equals(type)) {
             return Integer.parseInt(value);
         }
-        return Boolean.TRUE;
+        return value;
     }
 }

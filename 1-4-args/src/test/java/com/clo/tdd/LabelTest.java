@@ -26,4 +26,10 @@ public class LabelTest {
         Label label = new Label("p", "int");
         assertThat(label.parseValue("8080"), is(8080));
     }
+
+    @Test
+    public void should_parse_string_value_when_give_string_value() {
+        Label label = new Label("l", "string");
+        assertThat(label.parseValue("/usr"), is("/usr"));
+    }
 }
