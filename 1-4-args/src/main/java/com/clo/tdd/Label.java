@@ -18,6 +18,6 @@ public class Label {
     }
 
     public Object parseValue(String value) {
-        return null;
+        return Boolean.TRUE;
     }
 }
