@@ -10,4 +10,8 @@ package com.clo.tdd;
 public class Command {
     public Command(String command) {
     }
+
+    public Object queryValue(String label) {
+        return null;
+    }
 }
