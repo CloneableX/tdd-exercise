@@ -1,6 +1,7 @@
 package com.clo.tdd;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * com.clo.tdd.Command
@@ -10,10 +11,15 @@ import java.util.Arrays;
  * @description
  */
 public class Command {
+    private final HashMap<String, String> commandMap;
     private String[] commandPairs;
 
     public Command(String command) {
         this.commandPairs = command.split(" ");
+        commandMap = new HashMap<>();
+        for (int i = 0; i < commandPairs.length; i += 2) {
+            commandMap.put(commandPairs[i], commandPairs[i + 1]);
+        }
     }
 
     public Object queryValue(String label) {
@@ -21,6 +27,6 @@ public class Command {
     }
 
     public int size() {
-        return Arrays.stream(commandPairs).filter(commandStr -> commandStr.contains("-")).toArray().length;
+        return commandMap.size();
     }
 }
