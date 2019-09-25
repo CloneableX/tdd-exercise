@@ -19,5 +19,7 @@ public class CommandTest {
     public void should_get_command_when_give_command_string() {
         Command command = new Command("-l -p 8080 -d /usr/logs");
         assertThat(command.queryValue("l"), is(Boolean.TRUE));
+        assertThat(command.queryValue("p"), is(8080));
+        assertThat(command.queryValue("d"), is("/usr/logs"));
     }
 }
