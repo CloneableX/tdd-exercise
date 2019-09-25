@@ -21,6 +21,6 @@ public class Command {
     }
 
     public int size() {
-        return Arrays.stream(command).filter(commandStr -> commandStr.indexOf("-") > -1).toArray().length;
+        return Arrays.stream(command).filter(commandStr -> commandStr.contains("-")).toArray().length;
     }
 }
