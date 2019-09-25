@@ -1,5 +1,7 @@
 package com.clo.tdd;
 
+import java.util.Arrays;
+
 /**
  * com.clo.tdd.Command
  *
@@ -8,7 +10,10 @@ package com.clo.tdd;
  * @description
  */
 public class Command {
+    private String command;
+
     public Command(String command) {
+        this.command = command;
     }
 
     public Object queryValue(String label) {
@@ -16,6 +21,6 @@ public class Command {
     }
 
     public int size() {
-        return 3;
+        return Arrays.stream(command.split(" ")).filter(commandStr -> commandStr.indexOf("-") > -1).toArray().length;
     }
 }
