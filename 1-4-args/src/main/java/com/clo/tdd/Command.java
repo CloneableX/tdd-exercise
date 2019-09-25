@@ -10,10 +10,10 @@ import java.util.Arrays;
  * @description
  */
 public class Command {
-    private String[] command;
+    private String[] commandPairs;
 
     public Command(String command) {
-        this.command = command.split(" ");
+        this.commandPairs = command.split(" ");
     }
 
     public Object queryValue(String label) {
@@ -21,6 +21,6 @@ public class Command {
     }
 
     public int size() {
-        return Arrays.stream(command).filter(commandStr -> commandStr.contains("-")).toArray().length;
+        return Arrays.stream(commandPairs).filter(commandStr -> commandStr.contains("-")).toArray().length;
     }
 }
