@@ -12,10 +12,9 @@ import java.util.HashMap;
  */
 public class Command {
     private final HashMap<String, String> commandMap;
-    private String[] commandPairs;
 
     public Command(String command) {
-        this.commandPairs = command.split(" ");
+        String[] commandPairs = command.split(" ");
         commandMap = new HashMap<>();
         for (int i = 0; i < commandPairs.length; i += 2) {
             commandMap.put(commandPairs[i], commandPairs[i + 1]);
