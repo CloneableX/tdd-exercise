@@ -25,7 +25,7 @@ public class CommandTest {
 
     @Test
     public void should_get_command_size_when_give_command_string() {
-        Command command = new Command("-l true -p 8080 -d /usr/logs");
+        Command command = new Command("-l -p 8080 -d /usr/logs");
         assertThat(command.size(), is(3));
     }
 }

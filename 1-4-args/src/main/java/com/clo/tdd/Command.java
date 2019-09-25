@@ -19,7 +19,14 @@ public class Command {
         commandMap = new HashMap<>();
         for (int i = 0; i < commandPairs.length; i += 2) {
             commandMap.put(commandPairs[i], commandPairs[i + 1]);
+            if (isLabel(commandPairs[i + 1])) {
+                i--;
+            }
         }
+    }
+
+    private boolean isLabel(String commandStr) {
+        return commandStr.contains("-");
     }
 
     public Object queryValue(String label) {
