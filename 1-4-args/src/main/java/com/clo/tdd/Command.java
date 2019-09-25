@@ -14,4 +14,8 @@ public class Command {
     public Object queryValue(String label) {
         return null;
     }
+
+    public int size() {
+        return 3;
+    }
 }
