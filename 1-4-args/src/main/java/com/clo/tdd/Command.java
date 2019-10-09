@@ -32,7 +32,10 @@ public class Command {
     }
 
     public Object queryValue(String label) {
-        return 8080;
+        if (commandMap.containsKey(label)) {
+            return commandMap.get(label);
+        }
+        return null;
     }
 
     public int size() {

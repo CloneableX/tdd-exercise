@@ -32,6 +32,6 @@ public class CommandTest {
     @Test
     public void should_get_value_when_give_label_name() {
         Command command = new Command("-p 8080 -d /usr/logs");
-        assertThat(command.queryValue("-p"), is(8080));
+        assertThat(command.queryValue("-p"), is("8080"));
     }
 }
