@@ -23,8 +23,12 @@ public class Command {
                 i--;
                 value = null;
             }
-            commandMap.put(label, value);
+            commandMap.put(formatLabel(label), value);
         }
+    }
+
+    private String formatLabel(String label) {
+        return label.substring(label.indexOf("-") + 1);
     }
 
     private boolean isLabel(String commandStr) {
