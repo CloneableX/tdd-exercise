@@ -29,7 +29,7 @@ public class Command {
     }
 
     public Object queryValue(String label) {
-        return null;
+        return 8080;
     }
 
     public int size() {

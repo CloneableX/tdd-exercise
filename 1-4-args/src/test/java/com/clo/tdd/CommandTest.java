@@ -28,4 +28,10 @@ public class CommandTest {
         Command command = new Command("-l -p 8080 -d /usr/logs");
         assertThat(command.size(), is(3));
     }
+
+    @Test
+    public void should_get_value_when_give_label_name() {
+        Command command = new Command("-p 8080 -d /usr/logs");
+        assertThat(command.queryValue("p"), is(8080));
+    }
 }
