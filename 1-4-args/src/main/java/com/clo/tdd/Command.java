@@ -2,6 +2,7 @@ package com.clo.tdd;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 
 /**
  * com.clo.tdd.Command
@@ -36,10 +37,10 @@ public class Command {
     }
 
     public Object queryValue(String label) {
-        if (commandMap.containsKey(label)) {
-            return commandMap.get(label);
+        if (!commandMap.containsKey(label)) {
+            throw new NoSuchElementException("command n");
         }
-        return null;
+            return commandMap.get(label);
     }
 
     public int size() {

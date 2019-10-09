@@ -3,6 +3,8 @@ package com.clo.tdd;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
@@ -28,5 +30,11 @@ public class CommandTest {
         assertThat(command.queryValue("d"), is("/usr/logs"));
         assertThat(command.queryValue("l"), is("true"));
         assertNull(command.queryValue("t"));
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void should_get_no_such_ele_exception_when_give_not_exist_label() {
+        Command command = new Command("-l true -p 8080");
+        command.queryValue("t");
     }
 }
