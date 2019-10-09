@@ -17,10 +17,13 @@ public class Command {
         String[] commandPairs = command.split(" ");
         commandMap = new HashMap<>();
         for (int i = 0; i < commandPairs.length; i += 2) {
-            commandMap.put(commandPairs[i], commandPairs[i + 1]);
-            if (isLabel(commandPairs[i + 1])) {
+            String value = commandPairs[i + 1];
+            String label = commandPairs[i];
+            if (isLabel(value)) {
                 i--;
+                value = null;
             }
+            commandMap.put(label, value);
         }
     }
 
