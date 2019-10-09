@@ -38,9 +38,9 @@ public class Command {
 
     public Object queryValue(String label) {
         if (!commandMap.containsKey(label)) {
-            throw new NoSuchElementException("command n");
+            throw new NoSuchElementException("command label [" + label + "] not exist");
         }
-            return commandMap.get(label);
+        return commandMap.get(label);
     }
 
     public int size() {
