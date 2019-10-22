@@ -22,6 +22,7 @@ public class ArgsTest {
         Args args = new Args(schema, command);
         assertThat(args.queryValue("p"), is(8080));
         assertThat(args.queryValue("d"), is("/usr/logs"));
+        assertThat(args.queryValue("l"), is(Boolean.TRUE));
     }
 
     @Test
