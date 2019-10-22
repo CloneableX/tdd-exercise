@@ -19,6 +19,7 @@ public class LabelTest {
         assertThat(label.parseValue("true"), is(Boolean.TRUE));
         assertThat(label.parseValue("false"), is(Boolean.FALSE));
         assertThat(label.parseValue(null), is(Boolean.FALSE));
+        assertThat(label.parseValue(""), is(Boolean.TRUE));
     }
 
     @Test
