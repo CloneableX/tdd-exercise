@@ -21,7 +21,7 @@ public class Command {
             String label = commandPairs[i];
             if (isLabel(value)) {
                 i--;
-                value = null;
+                value = "";
             }
             commandMap.put(formatLabel(label), value);
         }

@@ -29,7 +29,7 @@ public class CommandTest {
         assertThat(command.queryValue("p"), is("8080"));
         assertThat(command.queryValue("d"), is("/usr/logs"));
         assertThat(command.queryValue("l"), is("true"));
-        assertNull(command.queryValue("t"));
+        assertThat(command.queryValue("t"), is(""));
     }
 
     @Test(expected = NoSuchElementException.class)
