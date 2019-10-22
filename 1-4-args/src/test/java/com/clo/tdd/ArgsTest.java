@@ -21,6 +21,7 @@ public class ArgsTest {
         Command command = new Command("-l -p 8080 -d /usr/logs");
         Args args = new Args(schema, command);
         assertThat(args.queryValue("p"), is(8080));
+        assertThat(args.queryValue("d"), is("/usr/logs"));
     }
 
     @Test
