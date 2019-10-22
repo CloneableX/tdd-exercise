@@ -17,7 +17,8 @@ public class Args {
     }
 
     public Object queryValue(String name) {
-        return command.queryValue(name);
+        Label label = schema.queryArg(name);
+        return label.parseValue(command.queryValue(name));
     }
 
     public int size() {

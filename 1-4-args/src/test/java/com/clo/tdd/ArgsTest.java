@@ -20,7 +20,7 @@ public class ArgsTest {
         Schema schema = new Schema("l:bool;p:int;d:string");
         Command command = new Command("-l -p 8080 -d /usr/logs");
         Args args = new Args(schema, command);
-        assertThat(args.queryValue("p"), is("8080"));
+        assertThat(args.queryValue("p"), is(8080));
     }
 
     @Test
