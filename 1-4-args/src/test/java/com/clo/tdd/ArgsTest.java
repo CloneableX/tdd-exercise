@@ -16,12 +16,11 @@ import static org.junit.Assert.assertThat;
  */
 public class ArgsTest {
     @Test
-    @Ignore
     public void should_get_arg_value_when_give_arg_name() {
         Schema schema = new Schema("l:bool;p:int;d:string");
         Command command = new Command("-l -p 8080 -d /usr/logs");
         Args args = new Args(schema, command);
-        assertThat(args.queryValue("l"), is(Boolean.TRUE));
+        assertThat(args.queryValue("p"), is("8080"));
     }
 
     @Test

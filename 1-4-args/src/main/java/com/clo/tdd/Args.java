@@ -17,7 +17,7 @@ public class Args {
     }
 
     public Object queryValue(String name) {
-        return null;
+        return command.queryValue(name);
     }
 
     public int size() {
