@@ -1,6 +1,5 @@
 package com.clo.tdd;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 
@@ -36,7 +35,7 @@ public class Command {
         return commandStr.contains("-");
     }
 
-    public Object queryValue(String label) {
+    public String queryValue(String label) {
         if (!commandMap.containsKey(label)) {
             throw new NoSuchElementException("command label [" + label + "] not exist");
         }
